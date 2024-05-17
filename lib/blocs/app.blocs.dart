@@ -9,6 +9,14 @@ class UserBloc extends Bloc<UserEvent, UserState>{
   UserBloc(this._userRepository) : super(UserLoadingState()){
     on<LoadUserEvent>((event,emit) async {
       emit(UserLoadingState());
+      // print("you emitted the first state"); it is possible to send things middle
+      try {
+        final users = await _userRepository.getUsers();
+        emit(UserLoadedState(users));
+      } catch (e) {
+        emit(UserErrorState(e.toString()));
+      }
+      // emit(UserLoadedState());
     });
   }
 }

@@ -18,8 +18,8 @@ class UserModel {
       id: json['id'],
       email: json['email'],
       firstname: json['first_name'] ?? 'First Name',
-      lastname: json['id'] ?? 'Last Name',
-      avatar: json['id'] ?? 'https://img.freepik.com/free-vector/illustration-user-avatar-icon'
+      lastname: json['last_name'] ?? 'Last Name',
+      avatar: json['avatar'] ?? 'https://img.freepik.com/free-vector/illustration-user-avatar-icon_53876-5907.jpg?w=740'
     );
   }
 }
